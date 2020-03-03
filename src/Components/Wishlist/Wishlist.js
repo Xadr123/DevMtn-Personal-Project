@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ComputerPicker() {
+export default function Wishlist() {
     return (
         <div>
-            ComputerPicker.js
+            Wishlist.js
         </div>
     )
 }
