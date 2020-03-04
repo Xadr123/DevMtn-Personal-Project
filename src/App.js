@@ -17,7 +17,8 @@ function App(props) {
             <Header />
             {routes}
           </div>
-        )}
+        )
+      }
     </div>
   )
 }
