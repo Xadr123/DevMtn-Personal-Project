@@ -10,7 +10,7 @@ function App(props) {
     <div className="App">
       {props.location.pathname === '/' ? (
         <div>
-          <Auth />
+          {routes}
         </div>
       ) : (
           <div>
