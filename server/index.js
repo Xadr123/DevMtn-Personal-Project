@@ -8,7 +8,7 @@ const checkUser = require('./middlewares/checkUser')
 const app = express()
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
-app.use(express.json)
+app.use(express.json())
 app.use(
     session({
         resave: false,
