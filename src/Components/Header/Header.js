@@ -16,8 +16,8 @@ function Header(props) {
         <div>
             <div className="main-header">
                 <section className="header-menu">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" className="menu-image" />
                     <p>Menu</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" className="menu-image" />
                 </section>
                 <h1>PC Buddy</h1>
                 <section className="user-info">

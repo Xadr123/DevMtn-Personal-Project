@@ -1,0 +1,59 @@
+.landing {
+    text-align: center;
+}
+
+.landing-head-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    height: 186px;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
+
+.box-container2 {
+    display: flex;
+    justify-content: center;
+}
+
+.prebuild-box {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    border-width: 1.25px;
+    border-color: black;
+    border-style: solid;
+}
+
+.custombuild-box {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    border-width: 1.25px;
+    border-color: black;
+    border-style: solid;
+}
+
+.saveditems-box {
+    display: flex;
+    margin-top: 10px;
+    display: flex;
+    width: 365px;
+    height: 186px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    border-width: 1.25px;
+    border-color: black;
+    border-style: solid;
+}
