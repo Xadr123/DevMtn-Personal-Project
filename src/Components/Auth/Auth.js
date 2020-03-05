@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { register, login, logout } from '../../ducks/userReducer'
 import { Link } from 'react-router-dom'
 import AuthErrors from './AuthErrors'
+import './Auth.css'
 
 
 function Auth(props) {
     const [registered, setRegistered] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    useEffect(() => {
+        if (props.userReducer.user.user_email) {
+            props.history.push('/home')
+        }
+    }, [props.userReducer])
 
     return (
         <div className="login-page">
@@ -100,6 +107,7 @@ function Auth(props) {
                         </section>
                     )}
             </div>
+            <AuthErrors />
         </div>
     )
 }

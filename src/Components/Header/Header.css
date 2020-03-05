@@ -1,0 +1,39 @@
+.main-header {
+    display: flex;
+    background-color: orange;
+    height: 75px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    width: 100px;
+    text-align: right;
+}
+
+.header-menu {
+    display: flex;
+    width: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: larger;
+    flex-direction: column;
+}
+
+.menu-image {
+    height: 50px;
+    width: 50px;
+}
+
+.dropdown-menu {
+    display: flex;
+    font-size: medium;
+    font-weight: lighter;
+    text-align: center;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-evenly;
+}

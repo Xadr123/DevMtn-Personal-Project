@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom'
 import Auth from './Components/Auth/Auth'
 import Header from './Components/Header/Header'
 import routes from './routes'
-import './App.css';
+import './reset.css';
+// import './App.css';
 
 function App(props) {
   return (

@@ -1,0 +1,17 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: darkslategrey;
+}
+
+.login-box {
+    display: flex;
+    background-color: orange;
+    flex-direction: column;
+    height: 325px;
+    width: 325px;
+    justify-content: center;
+    text-align: center;
+}

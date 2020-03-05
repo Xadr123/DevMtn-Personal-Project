@@ -12,7 +12,7 @@ class AuthErrors extends Component {
             })
         return (
             <div>
-                <ToastContainer autoClose={4000} />
+                <ToastContainer autoClose={2000} />
             </div>
         )
     }
