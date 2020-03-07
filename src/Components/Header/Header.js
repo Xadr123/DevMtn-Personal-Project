@@ -13,7 +13,7 @@ function Header(props) {
     }, [props.user_email])
 
     return (
-        <div>
+        <div className="top-bar">
             <div className="main-header">
                 <section className="header-menu">
                     <p>Menu</p>

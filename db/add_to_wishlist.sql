@@ -1,0 +1,1 @@
+insert into wishlists(user_id, product_id, wishlist_qty)

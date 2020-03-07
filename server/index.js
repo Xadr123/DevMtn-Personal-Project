@@ -36,3 +36,6 @@ app.post(`/auth/register`, checkUser, authCtrl.register)
 app.post(`/auth/login`, checkUser, authCtrl.login)
 app.post(`/auth/logout`, authCtrl.logout)
 app.get(`/auth/user`, checkUser, authCtrl.getUser)
+
+//PRODUCT ENDPOINTS
+app.get(`/api/products`, ctrl.getProducts)
