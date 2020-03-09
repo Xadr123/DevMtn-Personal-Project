@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import './ComputerPicker.css'
+import { connect } from 'react-redux'
+import { addToWishlist } from '../../ducks/reducer'
 
-export default function ComputerPicker(props) {
+function ComputerPicker(props) {
 
     const [products, setProducts] = useState([])
 
@@ -24,7 +26,7 @@ export default function ComputerPicker(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -41,3 +43,5 @@ export default function ComputerPicker(props) {
         </div>
     )
 }
+
+export default connect(null, { addToWishlist })(ComputerPicker)

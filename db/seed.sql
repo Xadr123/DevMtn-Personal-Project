@@ -24,7 +24,6 @@ insert into products (
   )
 values
   (
-    -- DONT DO THIS ONE, IT IS ALREADY ADDED
     'https://images-na.ssl-images-amazon.com/images/I/71QSKpbzlQL._SL1500_.jpg',
     'NZXT H510 - CA-H510B-W1 - Compact ATX Mid-Tower PC Gaming Case - Front I/O USB Type-C Port - Tempered Glass Side Panel - Cable Management System - Water-Cooling Ready - White/Black',
     'The H510 compact mid-tower ATX cases looks stunning and is an excellent value, making it the ideal case when you want a small-footprint ATX case without sacrifice. Well-engineered airflow, removable radiator mounting bracket, flush tempered-glass window, multiple fan filters, and a front panel USB-C connector are just some of the key features.',

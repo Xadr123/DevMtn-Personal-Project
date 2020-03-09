@@ -1,6 +1,9 @@
-insert into wishlists (user_id, product_id, wishlist_qty)
-values
-  (${ user_id }, ${ product_id }, 1);
+update wishlists
+set
+  wishlist_qty = wishlist_qty - 1
+where
+  user_id = ${ user_id }
+  and product_id = ${ product_id };
 select
   *
 from wishlists

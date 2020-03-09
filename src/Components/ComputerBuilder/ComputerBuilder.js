@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import './ComputerBuilder.css'
+import { connect } from 'react-redux'
+import { addToWishlist } from '../../ducks/reducer'
 import Product from '../Product/Product'
 
-export default function ComputerBuilder(props) {
+function ComputerBuilder(props) {
 
 
     const [products, setProducts] = useState([])
@@ -26,7 +28,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -46,7 +48,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -66,7 +68,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -86,7 +88,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -106,7 +108,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -126,7 +128,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -146,7 +148,7 @@ export default function ComputerBuilder(props) {
                     <p className="product-name">{product.product_name}</p>
                     <section>
                         <p>${product.product_price}</p>
-                        <button>Save Item</button>
+                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                     </section>
                 </section>
                 {/* <section className="bottom-card">
@@ -175,3 +177,5 @@ export default function ComputerBuilder(props) {
         </div>
     )
 }
+
+export default connect(null, { addToWishlist })(ComputerBuilder)

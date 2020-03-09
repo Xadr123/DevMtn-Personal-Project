@@ -34,6 +34,7 @@ module.exports = {
         if (authenticated) {
             delete user.user_password
             session.user = user
+            console.log(session.user)
             res.status(202).send(session.user)
         } else {
             res.status(401).send('Incorrect email or password')

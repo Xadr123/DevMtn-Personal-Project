@@ -39,3 +39,9 @@ app.get(`/auth/user`, checkUser, authCtrl.getUser)
 
 //PRODUCT ENDPOINTS
 app.get(`/api/products`, ctrl.getProducts)
+
+//WISHLIST ENDPOINTS
+app.post(`/api/wishlist`, ctrl.addToWishlist)
+app.get(`/api/wishlist`, ctrl.getWishlist)
+app.post(`/api/wishlist/subtract`, ctrl.subtractWishlist)
+app.delete(`/api/wishlist/:product_id`, ctrl.deleteWishlist)
