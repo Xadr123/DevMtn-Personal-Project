@@ -7,7 +7,7 @@ import '../ComputerPicker/ComputerPicker.css'
 function Wishlist(props) {
     useEffect(() => {
         props.getWishlist()
-    }, [])
+    }, [props.reducer.wishlist])
 
     if (!props.userReducer.user.user_email) {
         return <Redirect to='/' />
@@ -31,20 +31,23 @@ function Wishlist(props) {
                         <img src={product.product_image} className="product-image" />
                         <section className="top-card">
                             <p className="product-name">{product.product_name}</p>
-                            <section>
+                            <section className="bottom-card">
                                 <p>${product.product_price}</p>
                                 <p>Quantity: {product.wishlist_qty}</p>
-                                <button onClick={() => props.addToWishlist(product.product_id)
-                                } >Increase Quantity</button>
-                                <button onClick={() => {
-                                    if (product.wishlist_qty === 1) {
-                                        props.deleteWishlist(product.product_id)
-                                        props.getWishlist()
-                                    } else {
-                                        props.subtractWishlist(product.product_id)
+
+                                <section className="wish-buttons">
+                                    <button onClick={() => props.addToWishlist(product.product_id)
+                                    } >Increase Quantity</button>
+                                    <button onClick={() => {
+                                        if (product.wishlist_qty === 1) {
+                                            props.deleteWishlist(product.product_id)
+                                            props.getWishlist()
+                                        } else {
+                                            props.subtractWishlist(product.product_id)
+                                        }
                                     }
-                                }
-                                } >Decrease Quantity</button>
+                                    } >Decrease Quantity</button>
+                                </section>
                             </section>
                         </section>
                     </div>
