@@ -5,9 +5,9 @@ import { Redirect } from 'react-router-dom'
 import '../ComputerPicker/ComputerPicker.css'
 
 function Wishlist(props) {
-    useEffect(() => {
-        props.getWishlist()
-    }, [props.reducer.wishlist])
+    // useEffect(() => {
+    //     props.getWishlist()
+    // }, [props.userReducer.user])
 
     if (!props.userReducer.user.user_email) {
         return <Redirect to='/' />
