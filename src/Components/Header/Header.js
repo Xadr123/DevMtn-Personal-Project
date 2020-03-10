@@ -13,17 +13,20 @@ function Header(props) {
     }, [props.user_email])
 
     return (
-        <div className="sticky">
+        <div>
             <header className="sticky">
-                <a href="#/home" className="button">Home</a>
+                <a href="#/home" className="logo">PC Buddy</a>
+                <span>|</span>
                 <a href="#/custombuild" className="button">PC Builder</a>
+                <span>|</span>
                 <a href="#/prebuild" className="button">Pre-Built PC's</a>
+                <span>|</span>
                 <a href="#/wishlist" className="button">Wishlist</a>
             </header>
-            <p>Logged in as: {props.user_email}</p>
-            <p onClick={() => {
-                props.logout()
-            }}>Not you? Click here to log out.</p>
+            <h5>Logged in as: {props.user_email}
+                <small onClick={() => {
+                    props.logout()
+                }}>Not you? Click here to log out.</small></h5>
         </div >
     )
 }

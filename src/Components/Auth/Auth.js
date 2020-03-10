@@ -36,7 +36,7 @@ function Auth(props) {
                                 <legend>Sign In</legend>
                                 <div className="input-group row vertical">
                                     <div className="col-sm-offset-2 col-sm-12 col-md-offset-4 col-lg-offset-5">
-                                        <label for="email">Email: </label>
+                                        <label htmlFor="email">Email: </label>
                                         <input
                                             type="email"
                                             placeholder="Email"
@@ -48,7 +48,7 @@ function Auth(props) {
                                         />
                                     </div>
                                     <div className="col-sm-offset-2 col-md-offset-4 col-lg-offset-5">
-                                        <label for="password">Password: </label>
+                                        <label htmlFor="password">Password: </label>
                                         <input
                                             type="password"
                                             placeholder="Password"
@@ -83,7 +83,7 @@ function Auth(props) {
                                     <div className="input-group vertical">
                                         <div className="col-sm-offset-2 col-sm-12 col-md-offset-4 col-lg-offset-5">
 
-                                            <label for="email">Email: </label>
+                                            <label htmlFor="email">Email: </label>
 
                                             <input
                                                 type="email"
@@ -96,7 +96,7 @@ function Auth(props) {
                                             />
                                         </div>
                                         <div className="col-sm-offset-2 col-md-offset-4 col-lg-offset-5">
-                                            <label for="password">Password: </label>
+                                            <label htmlFor="password">Password: </label>
                                             <input
                                                 type="password"
                                                 placeholder="Password"

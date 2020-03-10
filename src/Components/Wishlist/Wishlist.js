@@ -14,7 +14,7 @@ function Wishlist(props) {
     }
 
     if (props.reducer.loading) {
-        return <div margin-top="150px">Loading your cart...</div>
+        return <h1 margin-top="150px">Loading your wishlist...</h1>
     }
 
     return (
