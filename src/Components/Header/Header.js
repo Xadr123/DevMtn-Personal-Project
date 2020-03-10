@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { checkUser, logout } from '../../ducks/userReducer'
-import './Header.css'
+// import './Header.css'
 
 function Header(props) {
 
@@ -13,34 +13,22 @@ function Header(props) {
     }, [props.user_email])
 
     return (
-        <div className="top-bar">
-            <div className="main-header">
-                <section className="header-menu">
-                    <p>Menu</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" className="menu-image" />
-                </section>
-                <h1>PC Buddy</h1>
-                <section className="user-info">
-                    <p>Logged in as: {props.user_email} </p>
-                    <button
-                        onClick={() => {
-                            props.logout()
-                        }}
-                    >Not you? Click to logout</button>
-                </section>
-            </div>
-            <div className="dropdown-menu">
-                <Link to="/home"><p> Home</p></Link>
-                <Link to="/custombuild"><p>Computer Builder</p></Link>
-                <Link to="/prebuild"><p>Pre-Built Computers</p></Link>
-                <Link to="/wishlist"><p>Wishlist</p></Link>
-            </div>
+        <div className="sticky">
+            <header className="sticky">
+                <a href="#/home" className="button">Home</a>
+                <a href="#/custombuild" className="button">PC Builder</a>
+                <a href="#/prebuild" className="button">Pre-Built PC's</a>
+                <a href="#/wishlist" className="button">Wishlist</a>
+            </header>
+            <p>Logged in as: {props.user_email}</p>
+            <p onClick={() => {
+                props.logout()
+            }}>Not you? Click here to log out.</p>
         </div >
     )
 }
 
 const mapStateToProps = reduxState => {
-    console.log(reduxState)
     const { user_email } = reduxState.userReducer.user
 
     return {
