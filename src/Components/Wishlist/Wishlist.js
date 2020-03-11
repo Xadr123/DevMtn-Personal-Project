@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getWishlist, addToWishlist, subtractWishlist, deleteWishlist } from '../../ducks/reducer'
 import { Redirect } from 'react-router-dom'
-import '../ComputerPicker/ComputerPicker.css'
+// import '../ComputerPicker/ComputerPicker.css'
 
 function Wishlist(props) {
-    // useEffect(() => {
-    //     props.getWishlist()
-    // }, [props.userReducer.user])
+    useEffect(() => {
+        props.getWishlist()
+    }, [props.userReducer.user])
 
     if (!props.userReducer.user.user_email) {
         return <Redirect to='/' />
@@ -21,17 +21,19 @@ function Wishlist(props) {
         <div className="products-list">
             <div>
                 <h1>Saved Items:</h1>
-                <h1>Total Cost: ${props.reducer.wishlist.reduce((acc, cur) => {
+                <h3>Total Cost: ${props.reducer.wishlist.reduce((acc, cur) => {
                     return (acc += cur.wishlist_qty * +cur.product_price)
-                }, 0)}</h1>
+                }, 0)}</h3>
             </div>
-            {props.reducer.wishlist.map(product => {
-                return (
-                    <div key={product.product_id} className="product-card">
-                        <img src={product.product_image} className="product-image" />
-                        <section className="top-card">
-                            <p className="product-name">{product.product_name}</p>
-                            <section className="bottom-card">
+            <div className="row">
+                {props.reducer.wishlist.map(product => {
+                    return (
+                        <div key={product.product_id} className="card small">
+                            <div className="section">
+                                <p>{product.product_name}</p>
+                            </div>
+                            <img src={product.product_image} />
+                            <div className="section dark">
                                 <p>${product.product_price}</p>
                                 <p>Quantity: {product.wishlist_qty}</p>
 
@@ -48,11 +50,11 @@ function Wishlist(props) {
                                     }
                                     } >Decrease Quantity</button>
                                 </section>
-                            </section>
-                        </section>
-                    </div>
-                )
-            })}
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

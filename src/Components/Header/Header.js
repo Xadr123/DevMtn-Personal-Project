@@ -21,7 +21,7 @@ function Header(props) {
                 <span>|</span>
                 <a href="#/prebuild" className="button">Pre-Built PC's</a>
                 <span>|</span>
-                <a href="#/wishlist" className="button">Wishlist</a>
+                <a href="#/wishlist" className="button">Saved Items</a>
             </header>
             <h5>Logged in as: {props.user_email}
                 <small onClick={() => {

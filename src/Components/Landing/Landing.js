@@ -13,7 +13,7 @@ export default function Landing() {
             </div>
             <div className="row">
                 <Link to="/custombuild">
-                    <div class="col-sm-12">
+                    <div class="col-sm-10 col-lg-10">
                         <div class="card large">
                             <div class="section dark">
                                 <h4>Parts Builder</h4>
@@ -23,7 +23,7 @@ export default function Landing() {
                     </div>
                 </Link>
                 <Link to="/prebuild">
-                    <div class="col-sm-12">
+                    <div class="col-sm-10 col-lg-10">
                         <div class="card large">
                             <div class="section dark">
                                 <h4>Pre-Built PC's</h4>
@@ -33,7 +33,7 @@ export default function Landing() {
                     </div>
                 </Link>
                 <Link to="/wishlist">
-                    <div class="col-sm-12">
+                    <div class="col-sm-10 col-lg-10">
                         <div class="card large">
                             <div class="section dark">
                                 <h4>Saved Items</h4>

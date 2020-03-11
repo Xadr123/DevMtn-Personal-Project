@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
-import './ComputerBuilder.css'
+// import './ComputerBuilder.css'
 import { connect } from 'react-redux'
 import { addToWishlist } from '../../ducks/reducer'
 import Product from '../Product/Product'
@@ -22,15 +22,15 @@ function ComputerBuilder(props) {
         return e.product_category === "case"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -42,15 +42,15 @@ function ComputerBuilder(props) {
         return e.product_category === "motherboard"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -62,15 +62,15 @@ function ComputerBuilder(props) {
         return e.product_category === "cpu"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -82,15 +82,15 @@ function ComputerBuilder(props) {
         return e.product_category === "ram"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -102,15 +102,15 @@ function ComputerBuilder(props) {
         return e.product_category === "gpu"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -122,15 +122,15 @@ function ComputerBuilder(props) {
         return e.product_category === "psu"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -142,15 +142,15 @@ function ComputerBuilder(props) {
         return e.product_category === "os"
     }).map((product) => {
         return (
-            <div className="product-card">
-                <img src={product.product_image} className="product-image" />
-                <section className="top-card">
-                    <p className="product-name">{product.product_name}</p>
-                    <section>
-                        <p>${product.product_price}</p>
-                        <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
-                    </section>
-                </section>
+            <div className="card small">
+                <div className="top-card">
+                    <p>{product.product_name}</p>
+                </div>
+                <img src={product.product_image} height="100px" />
+                <div className="section dark">
+                    <p>${product.product_price}</p>
+                    <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
+                </div>
                 {/* <section className="bottom-card">
                     <p>{product.product_description}</p>
                 </section> */}
@@ -161,19 +161,33 @@ function ComputerBuilder(props) {
     return (
         <div className="products-list">
             <h1 className="category-header">Cases:</h1>
-            {caseMapper}
+            <div className="row">
+                {caseMapper}
+            </div>
             <h1 className="category-header">Motherboards:</h1>
-            {motherboardMapper}
+            <div className="row">
+                {motherboardMapper}
+            </div>
             <h1 className="category-header">CPU's:</h1>
-            {cpuMapper}
+            <div className="row">
+                {cpuMapper}
+            </div>
             <h1 className="category-header">RAM:</h1>
-            {ramMapper}
+            <div className="row">
+                {ramMapper}
+            </div>
             <h1 className="category-header">GPU's:</h1>
-            {gpuMapper}
+            <div className="row">
+                {gpuMapper}
+            </div>
             <h1 className="category-header">POWER SUPPLY'S:</h1>
-            {psuMapper}
+            <div className="row">
+                {psuMapper}
+            </div>
             <h1 className="category-header">OPERATING SYSTEM:</h1>
-            {osMapper}
+            <div className="row">
+                {osMapper}
+            </div>
         </div>
     )
 }
