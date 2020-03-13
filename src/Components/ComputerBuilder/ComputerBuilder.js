@@ -7,7 +7,7 @@ import Product from '../Product/Product'
 
 function ComputerBuilder(props) {
 
-
+    console.log(props)
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function ComputerBuilder(props) {
         }).catch(err => {
             console.log(err)
         })
-    })
+    }, [])
 
     const caseMapper = products.filter((e) => {
         return e.product_category === "case"
@@ -29,6 +29,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">
@@ -49,6 +50,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">
@@ -69,6 +71,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">
@@ -89,6 +92,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">
@@ -109,6 +113,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">
@@ -129,6 +134,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">
@@ -149,6 +155,7 @@ function ComputerBuilder(props) {
                 <img src={product.product_image} height="100px" />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">

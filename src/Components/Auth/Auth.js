@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { register, login, logout } from '../../ducks/userReducer'
+import { register, login, logout, checkUser } from '../../ducks/userReducer'
 import { Link } from 'react-router-dom'
 import AuthErrors from './AuthErrors'
 // import './Auth.css'
@@ -12,6 +12,11 @@ function Auth(props) {
     const [password, setPassword] = useState('')
 
     useEffect(() => {
+        props.checkUser()
+    }, [props.userReducer.user])
+
+    useEffect(() => {
+
         if (props.userReducer.user.user_email) {
             props.history.push('/home')
         }
@@ -150,4 +155,4 @@ const mapStateToProps = reduxState => {
     }
 }
 
-export default connect(mapStateToProps, { register, login, logout })(Auth)
+export default connect(mapStateToProps, { register, login, logout, checkUser })(Auth)

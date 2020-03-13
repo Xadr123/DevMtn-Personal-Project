@@ -6,11 +6,17 @@ import * as serviceWorker from './serviceWorker';
 import store from './ducks/store'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
+// import { Elements } from '@stripe/react-stripe-js'
+// import { loadStripe } from '@stripe/stripe-js'
+
+// const stripePromise = loadStripe("pk_test_rhId81CBUkN6wVA3da1G9oEH007mkO0Dkc")
 
 ReactDOM.render(
     <Provider store={store}>
         <HashRouter>
+            {/* <Elements stripe={stripePromise}> */}
             <App />
+            {/* </Elements> */}
         </HashRouter >
     </Provider>,
     document.getElementById('root')

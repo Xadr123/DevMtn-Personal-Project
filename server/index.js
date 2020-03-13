@@ -1,4 +1,5 @@
 require('dotenv').config()
+const nodemailer = require('nodemailer')
 const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
@@ -7,6 +8,29 @@ const ctrl = require('./controller')
 const checkUser = require('./middlewares/checkUser')
 const app = express()
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
+
+// let transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: '',
+//         pass: ''
+//     }
+// })
+
+// let mailOptions = {
+//     from: '',
+//     to: '',
+//     subject: '',
+//     text: ''
+// }
+
+// transporter.sendMail(mailOptions, (err, data) => {
+//     if (err) {
+//         console.log('Not sent')
+//     } else {
+//         console.log('Sent')
+//     }
+// })
 
 app.use(express.json())
 app.use(
@@ -31,6 +55,7 @@ massive({
     console.log('Database Connected')
 })
 
+
 //AUTH ENDPOINTS
 app.post(`/auth/register`, checkUser, authCtrl.register)
 app.post(`/auth/login`, checkUser, authCtrl.login)
@@ -45,3 +70,4 @@ app.post(`/api/wishlist`, ctrl.addToWishlist)
 app.get(`/api/wishlist`, ctrl.getWishlist)
 app.post(`/api/wishlist/subtract`, ctrl.subtractWishlist)
 app.delete(`/api/wishlist/:product_id`, ctrl.deleteWishlist)
+

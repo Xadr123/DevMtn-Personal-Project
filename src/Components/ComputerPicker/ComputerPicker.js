@@ -27,6 +27,7 @@ function ComputerPicker(props) {
                 <img src={product.product_image} />
                 <div className="section dark">
                     <p>${product.product_price}</p>
+                    <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                     <button onClick={() => props.addToWishlist(product.product_id)} >Save Item</button>
                 </div>
                 {/* <section className="bottom-card">

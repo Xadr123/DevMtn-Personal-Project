@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // import './Landing.css'
 
-export default function Landing() {
+export default function Landing(props) {
+
+    console.log(props)
     return (
 
         <div className="container">
@@ -13,50 +15,36 @@ export default function Landing() {
             </div>
             <div className="row">
                 <Link to="/custombuild">
-                    <div class="col-sm-10 col-lg-10">
-                        <div class="card large">
-                            <div class="section dark">
-                                <h4>Parts Builder</h4>
-                            </div>
-                            <img src="https://img.pngio.com/birmingham-pc-repair-store-your-tech-bench-computer-component-png-1345_993.png" />
+                    {/* <div className="col-sm-10 col-lg-10"> */}
+                    <div className="card large">
+                        <div className="section dark">
+                            <h4>Parts Builder</h4>
                         </div>
+                        <img src="https://img.pngio.com/png-computer-parts-transparent-images-4157-pngio-png-of-computer-parts-591_445.png" />
                     </div>
+                    {/* </div> */}
                 </Link>
                 <Link to="/prebuild">
-                    <div class="col-sm-10 col-lg-10">
-                        <div class="card large">
-                            <div class="section dark">
-                                <h4>Pre-Built PC's</h4>
-                            </div>
-                            <img src="https://i0.wp.com/www.technugget.net/wp-content/uploads/2019/01/pc2.png?fit=904%2C922&ssl=1" />
+                    {/* <div className="col-sm-10 col-lg-10"> */}
+                    <div className="card large">
+                        <div className="section dark">
+                            <h4>Pre-Built PC's</h4>
                         </div>
+                        <img src="https://i0.wp.com/www.technugget.net/wp-content/uploads/2019/01/pc2.png?fit=904%2C922&ssl=1" />
                     </div>
+                    {/* </div> */}
                 </Link>
                 <Link to="/wishlist">
-                    <div class="col-sm-10 col-lg-10">
-                        <div class="card large">
-                            <div class="section dark">
-                                <h4>Saved Items</h4>
-                            </div>
-                            <img src="https://cdn0.iconfinder.com/data/icons/elasto-online-store/26/00-ELASTOFONT-STORE-READY_star-512.png" />
+                    {/* <div className="col-sm-10 col-lg-10"> */}
+                    <div className="card large">
+                        <div className="section dark">
+                            <h4>Saved Items</h4>
                         </div>
+                        <img src="https://cdn0.iconfinder.com/data/icons/elasto-online-store/26/00-ELASTOFONT-STORE-READY_star-512.png" />
                     </div>
+                    {/* </div> */}
                 </Link>
             </div>
-            <div className="row">
-                <div className="col-sm">
-                </div>
-            </div>
         </div>
-        // <div >
-        //     <h1 >Welcome to PC Buddy! Please choose if you would like to build a PC, or pick from pre-built options!</h1>
-        //     <section >
-        //         <Link to="/prebuild"><div >Pre-Built</div></Link>
-        //         <Link to="/custombuild"><div >Custom Build</div></Link>
-        //     </section>
-        //     <section >
-        //         <Link to="/wishlist"><div >Already have saved items? Click me to view your saved items.</div></Link>
-        //     </section>
-        // </div>
     )
 }

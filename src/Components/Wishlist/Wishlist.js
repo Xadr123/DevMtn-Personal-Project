@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { getWishlist, addToWishlist, subtractWishlist, deleteWishlist } from '../../ducks/reducer'
 import { Redirect } from 'react-router-dom'
-// import '../ComputerPicker/ComputerPicker.css'
 
 function Wishlist(props) {
     useEffect(() => {
         props.getWishlist()
-    }, [props.userReducer.user])
+    }, [props.userReducer.user.user_email])
+
 
     if (!props.userReducer.user.user_email) {
         return <Redirect to='/' />
@@ -16,6 +16,7 @@ function Wishlist(props) {
     if (props.reducer.loading) {
         return <h1 margin-top="150px">Loading your wishlist...</h1>
     }
+
 
     return (
         <div className="products-list">
@@ -34,6 +35,7 @@ function Wishlist(props) {
                             </div>
                             <img src={product.product_image} />
                             <div className="section dark">
+                                <a href={product.product_link} className="button-small" target="_blank">Link to Amazon Product Page</a>
                                 <p>${product.product_price}</p>
                                 <p>Quantity: {product.wishlist_qty}</p>
 
