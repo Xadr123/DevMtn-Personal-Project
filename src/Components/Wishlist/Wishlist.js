@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { getWishlist, addToWishlist, subtractWishlist, deleteWishlist } from '../../ducks/reducer'
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'
+import StripeCheckout from 'react-stripe-checkout'
 
 function Wishlist(props) {
     useEffect(() => {
@@ -17,6 +19,30 @@ function Wishlist(props) {
         return <h1 margin-top="150px">Loading your wishlist...</h1>
     }
 
+    let totalPrice = props.reducer.wishlist.reduce((acc, cur) => {
+        return (acc += cur.wishlist_qty * +cur.product_price)
+    }, 0) * 100
+
+    const onToken = (token) => {
+        let { amount } = totalPrice
+        amount /= 100
+        console.log(amount)
+        token.card = void 0
+        axios.post('/api/payment', { token, amount: totalPrice }).then(res => {
+            console.log(res)
+            alert(`Congratulations you paid PC Buddy!`)
+        })
+    }
+
+    const onOpened = () => {
+        console.log('opened')
+    }
+
+    const onClosed = () => {
+        return <Redirect to='/home' />
+    }
+
+    const imageUrl = 'https://image.freepik.com/free-vector/multimedia-desktop-pc-illustration_72147494127.jpg'
 
     return (
         <div className="products-list">
@@ -25,6 +51,27 @@ function Wishlist(props) {
                 <h3>Total Cost: ${props.reducer.wishlist.reduce((acc, cur) => {
                     return (acc += cur.wishlist_qty * +cur.product_price)
                 }, 0)}</h3>
+                <StripeCheckout
+                    name='PC Buddy' //header
+                    image={imageUrl}
+                    description='Please enter your information' //subtitle - beneath header
+                    stripeKey={process.env.REACT_APP_STRIPE_KEY} //public key not secret key
+                    token={onToken} //fires the call back
+                    amount={totalPrice} //this will be in cents
+                    currency="USD"
+                    // image={imageUrl} // the pop-in header image (default none)
+                    // ComponentClass="div" //initial default button styling on block scope (defaults to span)
+                    panelLabel="Submit Payment" //text on the submit button
+                    locale="en" //locale or language (e.g. en=english, fr=french, zh=chinese)
+                    opened={onOpened} //fires cb when stripe is opened
+                    closed={onClosed} //fires cb when stripe is closed
+                    allowRememberMe // "Remember Me" option (default true)
+                    billingAddress={false}
+                    // shippingAddress //you can collect their address
+                    zipCode={false}
+                >
+                    <button>Checkout</button>
+                </StripeCheckout>
             </div>
             <div className="row">
                 {props.reducer.wishlist.map(product => {

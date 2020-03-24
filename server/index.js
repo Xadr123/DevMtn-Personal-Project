@@ -71,3 +71,5 @@ app.get(`/api/wishlist`, ctrl.getWishlist)
 app.post(`/api/wishlist/subtract`, ctrl.subtractWishlist)
 app.delete(`/api/wishlist/:product_id`, ctrl.deleteWishlist)
 
+//STRIPE?
+app.post('/api/payment', ctrl.pay)
