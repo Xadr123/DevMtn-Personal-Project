@@ -15,7 +15,7 @@ function Header(props) {
     return (
         <div>
             <header className="sticky">
-                <a href="#/home" className="logo">PC Buddy</a>
+                <a href="#/home" className="logo">PC Buddyt</a>
                 <span>|</span>
                 <a href="#/custombuild" className="button">PC Builder</a>
                 <span>|</span>
